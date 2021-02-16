@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row" id="properties-img" style="height: 500px; width: 100%;">
+
+        <div >
+          <a class="btn btn-primary btn-lg" id="postbutton" routerLink="/properties/new" role="button">Post New Property</a>
+          <a class="btn btn-primary btn-lg" id="postbutton" routerLink="/properties/booked" role="button">Booked Properties</a>
+        </div>
+
+
+  </div>
+
+  <div class="album py-5 bg-light" style="margin: 20px;">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-3" *ngFor="let property of propertyList">
+          <div class="card sm-3 shadow-sm">
+            <div class="card" style="width: 100% ; height: 175px;">
+              <img
+                src="http://localhost:8060/media/{{property.imageFolder}}/0.png"
+                style="width: 100% ; height: 100%;" class="card-img-top" alt="...">
+
+            </div>
+            <div class="card-body">
+              <p class="card-text">Name: {{property.name}}<br>BHK: {{property.bhk}} <br> Location: {{property.city}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/properties/{{property._id}}">VIEW DETAILS</button>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="row">
+
+    <div class="card col-sm-3" *ngFor="let property of propertyList">
+            <div class="card-body">
+                <h5 class="card-title">{{property.name}}</h5>
+                <p class="card-text">City: {{property.city}}</p>
+                <a routerLink="/properties/{{property._id}}" class="link">View Details</a>
+            </div>
+        </div>
+
+  </div> -->
+
+</div>
