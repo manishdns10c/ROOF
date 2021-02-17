@@ -1,0 +1,18 @@
+
+  services:
+    roofui:
+      image: root
+      ports:
+        - "8080:80"   
+    db:
+      image: mongo
+      ports:
+        - "27017:27017"        
+    roofservice:
+      image: roof-service
+      networks:
+        - bridge
+      depends_on:
+        - db
+      ports:
+        - "8060:8060"        
