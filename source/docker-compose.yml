@@ -1,18 +1,19 @@
-
+  version: '3.7'
   services:
     roofui:
       image: root
       ports:
         - "8080:80"   
-    db:
+
+    mongo:
       image: mongo
       ports:
         - "27017:27017"        
+
     roofservice:
       image: roof-service
-      networks:
-        - bridge
+
       depends_on:
-        - db
+        - mongo
       ports:
-        - "8060:8060"        
+        - "8060:8060"   
