@@ -1,7 +1,7 @@
   version: '3.7'
   services:
     roofui:
-      image: root
+      image: manish97/root
       ports:
         - "8080:80"   
 
@@ -11,7 +11,7 @@
         - "27017:27017"        
 
     roofservice:
-      image: roof-service
+      image: manish97/roof-service
 
       depends_on:
         - mongo
